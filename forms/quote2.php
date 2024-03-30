@@ -77,7 +77,7 @@ $mail->Password = 'Inicio01';
 //Set the SMTP port number - likely to be 25, 465 or 587
 $mail->Port = 465;
 //Set who the message is to be sent from
-$mail->setFrom('Inicio01', 'Notificaciones CLG');
+$mail->setFrom('mpanameno.clg@gmail.com', 'Notificaciones CLG');
 //Set an alternative reply-to address
 //$mail->addReplyTo('correo@dominio.tld', 'Magic');
 //Set who the message is to be sent to
