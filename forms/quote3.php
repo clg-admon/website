@@ -12,6 +12,7 @@ require '../assets/PHPMailer/src/SMTP.php';
 $mail = new PHPMailer(true);
 $customerName = $_POST['name'];
 $customerEmail = $_POST['email'];
+$sentEmail = 'mpanameno.clg@gmail.com';
 
 
 $htmlContent = '<h1>Customer: '.$_POST['name'].'</h1>
@@ -64,8 +65,8 @@ try {
     $mail->Port = 587;
 
     // Configura el remitente y el destinatario
-    $mail->setFrom($customerEmail, 'New Quote Requested');
-    $mail->addAddress($customerEmail, $customerName);
+    $mail->setFrom($sentEmail, 'New Quote Requested');
+    $mail->addAddress($sentEmail, $customerName);
 
     // Configura el asunto y el cuerpo del mensaje
     $mail->IsHTML(true);
