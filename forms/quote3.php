@@ -51,6 +51,7 @@ tr:nth-child(even) {
 </body>
 </html>";
 
+try {
     // Configura el servidor SMTP de Gmail
     $mail->isSMTP();
     $mail->Host = 'smtp.gmail.com';
@@ -71,7 +72,6 @@ tr:nth-child(even) {
 
     // Envía el correo
     $mail->send();
-    echo 'Correo enviado exitosamente';
 } catch (Exception $e) {
     echo 'Error al enviar el correo: ', $mail->ErrorInfo;
 }
