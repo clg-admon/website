@@ -1,6 +1,4 @@
 <?php
-set_time_limit(600);
-session_start();
 
 $htmlContent = '<h1>Cliente '.$_POST['Name'].'</h1>
 <p>Envia la siguiente información.</p>';
@@ -81,7 +79,7 @@ $mail->setFrom('mpanameno.clg@gmail.com', 'Notificaciones CLG');
 //Set an alternative reply-to address
 //$mail->addReplyTo('correo@dominio.tld', 'Magic');
 //Set who the message is to be sent to
-$mail->addAddress('tcpanameno@gmai.com', 'John Doe');
+$mail->addAddress('tcpanameno@gmail.com', 'John Doe');
 $mail->IsHTML(true);
 //Set the subject line
 $mail->Subject = 'Notificacion de mensaje en CLG';
