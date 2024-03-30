@@ -75,7 +75,7 @@ try {
 
     // Envía el correo
     if ($mail->send()) {
-        echo "El correo se envió exitosamente.";
+        echo "Your quote request has been sent successfully. Thank you!";
     } else {
         echo "No se pudo enviar el correo. Error: " . $mail->ErrorInfo;
     }
