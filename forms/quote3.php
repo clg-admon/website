@@ -23,12 +23,12 @@ $htmlContent = '<h1>Customer: '.$_POST['name'].'</h1>
     <tr><td>Message</td><td>".$_POST['message']."</td></tr>  
           </table>";
 $htmlContent.=$tabla;
-$htmlContent.="<p>Factura o comprobante de compra anexada en este correo</p>";
+$htmlContent.="<p>The Customer requests a call to provide a visit and a quote for a service with CLG</p>";
 
 $message = "<!DOCTYPE html>
 <html>
 <head>
-<title>Notificacion orden</title>
+<title>Email Quote notification</title>
 
 <style>
 table {
