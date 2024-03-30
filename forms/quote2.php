@@ -53,9 +53,9 @@ use PHPMailer\PHPMailer\SMTP;
 //date_default_timezone_set('Etc/UTC');
 
 //Create a new PHPMailer instance
-require '../assets/PHPMailer/src/Exception.php';
-require '../assets/PHPMailer/src/PHPMailer.php';
-require '../assets/PHPMailer/src/SMTP.php';
+require 'assets/PHPMailer/src/Exception.php';
+require 'assets/PHPMailer/src/PHPMailer.php';
+require 'assets/PHPMailer/src/SMTP.php';
 $mail = new PHPMailer();
 //Tell PHPMailer to use SMTP
 $mail->isSMTP();
