@@ -65,13 +65,13 @@ $mail->SMTPDebug = 0;
 //$mail->SMTPDebug = SMTP::DEBUG_SERVER;
 $mail->SMTPSecure = 'tls';
 //Set the hostname of the mail server
-$mail->Host = 'smtp.gmail.com';
+$mail->Host = 'smtp.office365.com';
 //Whether to use SMTP authentication
 $mail->SMTPAuth = true;
 //Username to use for SMTP authentication
-$mail->Username = 'mpanameno.clg@gmail.com';
+$mail->Username = 'lapalmanet@outlook.com';
 //Password to use for SMTP authentication
-$mail->Password = 'Inicio01';
+$mail->Password = 'ctC395U@9q2%';
 //Set the SMTP port number - likely to be 25, 465 or 587
 $mail->Port = 587;
 //Set who the message is to be sent from
@@ -79,7 +79,7 @@ $mail->setFrom('mpanameno.clg@gmail.com', 'Notificaciones CLG');
 //Set an alternative reply-to address
 //$mail->addReplyTo('correo@dominio.tld', 'Magic');
 //Set who the message is to be sent to
-$mail->addAddress('tcpanameno@gmail.com', 'John Doe');
+$mail->addAddress('lapalmanet@outlook.com', 'John Doe');
 $mail->IsHTML(true);
 //Set the subject line
 $mail->Subject = 'Notificacion de mensaje en CLG';
