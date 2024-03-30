@@ -74,12 +74,8 @@ try {
     $mail->Body = $message;
 
     // Envía el correo
-    if ($mail->send()) {
-        echo "Your quote request has been sent successfully. Thank you!";
-    } else {
-        echo "No se pudo enviar el correo. Error: " . $mail->ErrorInfo;
-    }
-    var_dump($mail->send());
+    $mail->send();
+    echo 'Your quote request has been sent successfully. Thank you!';
 } catch (Exception $e) {
     echo 'Error sending the email: ', $mail->ErrorInfo;
 }
