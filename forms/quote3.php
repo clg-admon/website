@@ -10,15 +10,17 @@ require '../assets/PHPMailer/src/SMTP.php';
 
 // Instancia PHPMailer
 $mail = new PHPMailer(true);
+$customerName = $_POST['name'];
+$customerEmail = $_POST['email'];
 
 
-$htmlContent = '<h1>Cliente '.$_POST['Name'].'</h1>
-<p>Envia la siguiente información.</p>';
+$htmlContent = '<h1>Customer: '.$_POST['name'].'</h1>
+<p>Customer Information.</p>';
     $tabla="<table>
-    <tr><td>Categoría</td><td>".$_POST['name']."</td></tr>  
-    <tr><td>Precio</td><td>".$_POST['email']."</td></tr>  
-    <tr><td>Lugar comprado</td><td>".$_POST['phone']."</td></tr>  
-    <tr><td>Peso del producto</td><td>".$_POST['message']."</td></tr>  
+    <tr><td>Name: </td><td>".$_POST['name']."</td></tr>  
+    <tr><td>Email</td><td>".$_POST['email']."</td></tr>  
+    <tr><td>Phone</td><td>".$_POST['phone']."</td></tr>  
+    <tr><td>Message</td><td>".$_POST['message']."</td></tr>  
           </table>";
 $htmlContent.=$tabla;
 $htmlContent.="<p>Factura o comprobante de compra anexada en este correo</p>";
@@ -62,18 +64,18 @@ try {
     $mail->Port = 587;
 
     // Configura el remitente y el destinatario
-    $mail->setFrom('mpanameno.clg@gmail.com', 'Notificaciones CLG');
-    $mail->addAddress('tcpanameno@gmail.com', 'John Doe');
+    $mail->setFrom($customerEmail, 'New Quote Requested');
+    $mail->addAddress($customerEmail, $customerName);
 
     // Configura el asunto y el cuerpo del mensaje
     $mail->IsHTML(true);
-    $mail->Subject = 'Notificacion de mensaje en CLG';
+    $mail->Subject = 'New Quote Requested';
     $mail->Body = $message;
 
     // Envía el correo
     $mail->send();
-    echo 'Correo enviado exitosamente';
+    echo 'Email sent successfully';
 } catch (Exception $e) {
-    echo 'Error al enviar el correo: ', $mail->ErrorInfo;
+    echo 'Error sending the email: ', $mail->ErrorInfo;
 }
 ?>
