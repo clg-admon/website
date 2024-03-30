@@ -74,8 +74,11 @@ try {
     $mail->Body = $message;
 
     // Envía el correo
-    $mail->send();
-    echo 'Email sent successfully';
+    if ($mail->send()) {
+        echo "El correo se envió exitosamente.";
+    } else {
+        echo "No se pudo enviar el correo. Error: " . $mail->ErrorInfo;
+    }
 } catch (Exception $e) {
     echo 'Error sending the email: ', $mail->ErrorInfo;
 }
