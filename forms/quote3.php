@@ -73,11 +73,14 @@ try {
     $mail->Subject = 'New Quote Requested';
     $mail->Body = $message;
 
-    // Envía el correo y devuelve la respuesta
-    echo $mail->send();
+    // Envía el correo
+    if ($mail->send()) {
+        echo "Your quote request has been sent successfully. Thank you!";
+    } else {
+        echo "No se pudo enviar el correo. Error: " . $mail->ErrorInfo;
+    }
+    var_dump($mail->send());
 } catch (Exception $e) {
-    // Maneja cualquier excepción que pueda ocurrir durante el proceso de envío
     echo 'Error sending the email: ', $mail->ErrorInfo;
 }
 ?>
-
