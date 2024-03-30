@@ -28,6 +28,12 @@
   <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
   <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
 
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/magnific-popup.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/jquery.magnific-popup.min.js"></script>
+
+
   <!-- Template Main CSS File -->
   <link href="assets/css/main.css" rel="stylesheet">
 
@@ -577,28 +583,50 @@
 
           <ul class="portfolio-flters" data-aos="fade-up" data-aos-delay="100">
             <li data-filter="*" class="filter-active">All</li>
-            <li data-filter=".filter-remodeling">Remodeling</li>
-            <li data-filter=".filter-construction">Construction</li>
-            <li data-filter=".filter-repairs">Painting</li>
-            <li data-filter=".filter-design">Drywall</li>
+            <!-- <li data-filter=".filter-remodeling">Painting</li> -->
+            <li data-filter=".filter-construction">Residential</li>
+            <li data-filter=".filter-repairs">Commercial</li>
+            <!-- <li data-filter=".filter-design">Drywall</li> -->
           </ul><!-- End Projects Filters -->
 
           <div class="row gy-4 portfolio-container" data-aos="fade-up" data-aos-delay="200">
 
-            <div class="col-lg-4 col-md-6 portfolio-item filter-remodeling">
-              <div class="portfolio-content h-100">
-                <img src="assets/img/projects/remodeling-1a.jpg" class="img-fluid" alt="">
-                <div class="portfolio-info">
-                  <h4>Remodeling 1</h4>
-                  <p>Lorem ipsum, dolor sit amet consectetur</p>
-                  <a href="assets/img/projects/remodeling-1a.jpg" title="Remodeling 1"
-                    data-gallery="portfolio-gallery-remodeling" class="glightbox preview-link"><i
-                      class="bi bi-zoom-in"></i></a>
-                  <a href="project-details.html" title="More Details" class="details-link"><i
-                      class="bi bi-link-45deg"></i></a>
+            <div class="col-lg-4 col-md-6 portfolio-item filter-construction">
+              <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+                <div class="carousel-inner">
+                  <div class="carousel-item active">
+                    <a href="assets/img/projects/construction-1a.jpg" class="portfolio-image-link"
+                      title="Construction 1">
+                      <img src="assets/img/projects/construction-1a.jpg" class="d-block w-100" alt="Construction 1">
+                    </a>
+                    <div class="carousel-caption d-none d-md-block">
+                      <h5>Construction 1</h5>
+                      <p>Lorem ipsum, dolor sit amet consectetur</p>
+                    </div>
+                  </div>
+                  <!-- Agrega más elementos .carousel-item según sea necesario -->
+
+                  <div class="carousel-item">
+                    <a href="assets/img/projects/construction-2a.jpg" class="portfolio-image-link"
+                      title="Construction 2">
+                      <img src="assets/img/projects/construction-2a.jpg" class="d-block w-100" alt="Construction 2">
+                    </a>
+                    <div class="carousel-caption d-none d-md-block">
+                      <h5>Construction 2</h5>
+                      <p>Lorem ipsum, dolor sit amet consectetur</p>
+                    </div>
+                  </div>
                 </div>
+                <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+                  <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                  <span class="sr-only">Previous</span>
+                </a>
+                <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+                  <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                  <span class="sr-only">Next</span>
+                </a>
               </div>
-            </div><!-- End Projects Item -->
+            </div>
 
             <div class="col-lg-4 col-md-6 portfolio-item filter-construction">
               <div class="portfolio-content h-100">
@@ -606,7 +634,7 @@
                 <div class="portfolio-info">
                   <h4>Construction 1</h4>
                   <p>Lorem ipsum, dolor sit amet consectetur</p>
-                  <a href="assets/img/projects/construction-1a.jpg" title="Construction 1"
+                  <a href="assets/img/projects/construction-a.jpg" title="Construction 1"
                     data-gallery="portfolio-gallery-construction" class="glightbox preview-link"><i
                       class="bi bi-zoom-in"></i></a>
                   <a href="project-details.html" title="More Details" class="details-link"><i
@@ -847,7 +875,7 @@
     <div class="footer-legal text-center position-relative">
       <div class="container">
         <div class="copyright">
-          &copy; <strong><span>CLG Construction</span></strong>
+          &copy; <strong><span>CLG General Contractors INC</span></strong>
         </div>
         <div class="credits">
           <!-- All the links in the footer should remain intact. -->
@@ -878,6 +906,42 @@
 
   <!-- Template Main JS File -->
   <script src="assets/js/main.js"></script>
+
+  <script>
+    $(document).ready(function () {
+      $('.portfolio-image-link').magnificPopup({
+        type: 'image',
+        gallery: {
+          enabled: true
+        }
+      });
+    });
+  </script>
+
+  <script>
+    $(document).ready(function () {
+      // Inicializar Magnific Popup
+      $('.portfolio-image-link').magnificPopup({
+        type: 'image',
+        gallery: {
+          enabled: true
+        },
+        callbacks: {
+          open: function () {
+            // Mostrar las flechas de navegación cuando se abre la imagen
+            $('.carousel-control-prev, .carousel-control-next').css('display', 'block');
+          },
+          close: function () {
+            // Ocultar las flechas de navegación cuando se cierra la imagen
+            $('.carousel-control-prev, .carousel-control-next').css('display', 'none');
+          }
+        }
+      });
+
+      // Ocultar las flechas de navegación al cargar la página
+      $('.carousel-control-prev, .carousel-control-next').css('display', 'none');
+    });
+  </script>
 
   <script>
     document.addEventListener('DOMContentLoaded', function () {
