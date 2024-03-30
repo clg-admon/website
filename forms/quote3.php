@@ -16,7 +16,7 @@ $sentEmail = 'mpanameno.clg@gmail.com';
 
 
 $htmlContent = '<h1>Customer: '.$_POST['name'].'</h1>
-<p>Customer Information.</p>';
+<p>Information Provided.</p>';
     $tabla="<table>
     <tr><td>Name: </td><td>".$_POST['name']."</td></tr>  
     <tr><td>Email</td><td>".$_POST['email']."</td></tr>  
