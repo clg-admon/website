@@ -63,7 +63,7 @@ $mail->SMTPDebug = 0;
 // SMTP::DEBUG_CLIENT = client messages
 // SMTP::DEBUG_SERVER = client and server messages
 //$mail->SMTPDebug = SMTP::DEBUG_SERVER;
-$mail->SMTPSecure = 'ssl';
+$mail->SMTPSecure = 'tls';
 //Set the hostname of the mail server
 $mail->Host = 'smtp.gmail.com';
 //Whether to use SMTP authentication
@@ -73,7 +73,7 @@ $mail->Username = 'mpanameno.clg@gmail.com';
 //Password to use for SMTP authentication
 $mail->Password = 'Inicio01';
 //Set the SMTP port number - likely to be 25, 465 or 587
-$mail->Port = 465;
+$mail->Port = 587;
 //Set who the message is to be sent from
 $mail->setFrom('mpanameno.clg@gmail.com', 'Notificaciones CLG');
 //Set an alternative reply-to address
