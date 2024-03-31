@@ -59,7 +59,7 @@
       })
       .then(data => {
         thisForm.querySelector('.loading').classList.remove('d-block');
-        if (data.trim() === '1') { // Modificamos esta línea para aceptar solo el valor '1'
+        if (data.includes('1')) { // Verifica si la respuesta incluye '1'
           thisForm.querySelector('.sent-message').classList.add('d-block');
           thisForm.reset();
         } else {
