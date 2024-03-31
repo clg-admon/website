@@ -63,10 +63,9 @@
         }
       })
       .then(data => {
+        console.log(data); // Mostrar la respuesta del servidor en la consola
         thisForm.querySelector('.loading').classList.remove('d-block');
         if (data.trim() !== '') {
-          // Mostrar la respuesta del servidor
-          thisForm.querySelector('.sent-message').innerHTML = data;
           thisForm.querySelector('.sent-message').classList.add('d-block');
           thisForm.reset();
         } else {
@@ -74,7 +73,6 @@
         }
       })
       .catch((error) => {
-        // Mostrar el mensaje de error real
         displayError(thisForm, error);
       });
   }
