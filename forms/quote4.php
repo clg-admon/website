@@ -1,11 +1,11 @@
 <?php
 // Verificar si se recibieron datos del formulario
-if ($_SERVER["REQUEST_METHOD"] == "POST") {
+if (!empty($_POST)) {
     // Obtener los datos del formulario
-    $name = $_POST['name'];
-    $email = $_POST['email'];
-    $phone = $_POST['phone'];
-    $message = $_POST['message'];
+    $name = isset($_POST['name']) ? $_POST['name'] : '';
+    $email = isset($_POST['email']) ? $_POST['email'] : '';
+    $phone = isset($_POST['phone']) ? $_POST['phone'] : '';
+    $message = isset($_POST['message']) ? $_POST['message'] : '';
     
     // Mostrar los datos recibidos
     echo "<h2>Datos recibidos:</h2>";
