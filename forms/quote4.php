@@ -7,14 +7,12 @@ if (!empty($_POST)) {
     $phone = isset($_POST['phone']) ? $_POST['phone'] : '';
     $message = isset($_POST['message']) ? $_POST['message'] : '';
     
-    // Mostrar los datos recibidos
-    echo "<h2>Datos recibidos:</h2>";
-    echo "<p>Nombre: $name</p>";
-    echo "<p>Email: $email</p>";
-    echo "<p>Teléfono: $phone</p>";
-    echo "<p>Mensaje: $message</p>";
+    // Aquí puedes hacer cualquier procesamiento necesario con los datos del formulario
+    
+    // Devolver el valor '1'
+    echo "1";
 } else {
     // Si no se recibieron datos del formulario, mostrar un mensaje de error
-    echo "<h2>Error: No se recibieron datos del formulario</h2>";
+    echo "Error: No se recibieron datos del formulario";
 }
 ?>
