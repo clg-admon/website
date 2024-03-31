@@ -58,8 +58,9 @@
         }
       })
       .then(data => {
+        console.log(data); // Agregamos esta línea para verificar la respuesta del servidor
         thisForm.querySelector('.loading').classList.remove('d-block');
-        if (data.includes('1')) { // Verifica si la respuesta incluye '1'
+        if (data.trim() === '1') {
           thisForm.querySelector('.sent-message').classList.add('d-block');
           thisForm.reset();
         } else {

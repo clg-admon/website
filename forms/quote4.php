@@ -11,6 +11,7 @@ if (!empty($_POST)) {
     
     // Devolver el valor '1'
     echo "1";
+    echo '<script>alert("Mensaje de alerta desde PHP");</script>';
 } else {
     // Si no se recibieron datos del formulario, mostrar un mensaje de error
     echo "Error: No se recibieron datos del formulario";
