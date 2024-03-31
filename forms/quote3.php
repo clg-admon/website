@@ -75,8 +75,9 @@ try {
 
     // Envía el correo
     $mail->send();
-    echo 'Your quote request has been sent successfully. Thank you!';
+    echo $mail->send();
 } catch (Exception $e) {
-    echo 'Error sending the email: ', $mail->ErrorInfo;
+    //echo 'Error sending the email: ', $mail->ErrorInfo;
+    echo $mail->send();
 }
 ?>
