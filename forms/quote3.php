@@ -12,7 +12,7 @@ require '../assets/PHPMailer/src/SMTP.php';
 $mail = new PHPMailer(true);
 $customerName = $_POST['name'];
 $customerEmail = $_POST['email'];
-$sentEmail = 'admin@clggeneralcon.com';
+$sentEmail = 'mpanameno.clg@gmail.com';
 
 
 $htmlContent = '<h1>Customer: '.$_POST['name'].'</h1>
