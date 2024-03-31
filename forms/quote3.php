@@ -74,7 +74,7 @@ try {
     $mail->Body = $message;
 
     // Envía el correo
-    $mail->send();
+    echo $mail->send();
 } catch (Exception $e) {
     echo 'Error sending the email: ', $mail->ErrorInfo;
 }
