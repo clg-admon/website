@@ -949,9 +949,19 @@
       const form = document.querySelector('.php-email-form');
       const sentMessage = document.querySelector('.sent-message');
       const errorMessage = document.querySelector('.error-message');
+      let formSubmitted = false;
 
       form.addEventListener('submit', async function (event) {
         event.preventDefault();
+
+        // Verificar si el formulario ya ha sido enviado
+        if (formSubmitted) {
+          return;
+        }
+
+        // Marcar el formulario como enviado para evitar envíos múltiples
+        formSubmitted = true;
+
         const formData = new FormData(form);
 
         try {
@@ -979,6 +989,7 @@
       });
     });
   </script>
+
 
 </body>
 
