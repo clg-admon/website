@@ -76,7 +76,7 @@ try {
     $result = $mail->send();
     
     // Redirige al usuario al home page
-    echo '<script>window.location.href = "index.html";</script>';
+    echo '<script>window.location.href = "../index.html";</script>';
     
     // Muestra un mensaje emergente si el correo se envió correctamente
     if ($result) {
