@@ -75,15 +75,17 @@ try {
 
     $result = $mail->send();
     
-    // Redirige al usuario al home page
-    echo '<script>window.location.href = "../index.html";</script>';
-    
     // Muestra un mensaje emergente si el correo se envió correctamente
     if ($result) {
         echo '<script>alert("Correo enviado correctamente.");</script>';
     } else {
         echo '<script>alert("Error al enviar el correo. Por favor, inténtalo de nuevo.");</script>';
     }
+
+    // Redirige al usuario al home page
+    echo '<script>window.location.href = "../index.html";</script>';
+
+    
 } catch (Exception $e) {
     echo 'Error sending the email: ', $mail->ErrorInfo;
 }
