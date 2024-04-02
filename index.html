@@ -116,6 +116,11 @@
 
       <div class="carousel-item active" style="background-image: url(assets/img/img_carrousel/3.jpg)">
       </div>
+      <!-- <div class="carousel-item active">
+        <video id="video-carousel" autoplay loop muted>
+          <source src="assets/img/img_carrousel/video.mp4" type="video/mp4">
+        </video>
+      </div> -->
       <div class="carousel-item" style="background-image: url(assets/img/img_carrousel/2.jpeg)"></div>
       <div class="carousel-item" style="background-image: url(assets/img/img_carrousel/1.jpeg)"></div>
       <div class="carousel-item" style="background-image: url(assets/img/img_carrousel/4.jpeg)"></div>
@@ -129,6 +134,18 @@
       <a class="carousel-control-next" href="#hero-carousel" role="button" data-bs-slide="next">
         <span class="carousel-control-next-icon bi bi-chevron-right" aria-hidden="true"></span>
       </a>
+
+      <script>
+        // Obtener el elemento de video
+        const video = document.getElementById('video-carousel');
+
+        // Detectar el evento de finalización del video
+        video.addEventListener('ended', function () {
+          // Activar manualmente el siguiente ítem del carrusel
+          const carousel = new bootstrap.Carousel(document.getElementById('hero-carousel'));
+          carousel.next();
+        });
+      </script>
 
     </div>
 
@@ -422,8 +439,15 @@
       <div class="container" data-aos="fade-up">
 
         <div class="row justify-content-around gy-4">
-          <div class="col-lg-6 img-bg" style="background-image: url(assets/img/img_2/why_us.jpg);" data-aos="zoom-in"
-            data-aos-delay="100"></div>
+          <div class="col-lg-6 img-bg" data-aos="zoom-in" data-aos-delay="100">
+
+            <video autoplay loop muted playsinline style="width: 90%; height: 90%;">
+              <source src="assets/img/img_2/video.mp4" type="video/mp4">
+              <!-- Añade otros formatos de video aquí para una mayor compatibilidad -->
+              Tu navegador no soporta el elemento de video.
+            </video>
+
+          </div>
 
           <div class="col-lg-5 d-flex flex-column justify-content-center">
             <h3>Why CLG?</h3>
